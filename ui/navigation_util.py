@@ -30,3 +30,21 @@ def get_navigations(navigations, navigation_dict, depth=0):
         get_navigations(navigation['subNavigations'], navigation_dict, depth + 1)
 
     return navigation_dict
+
+
+def show_navigation(navigation_id, show_navigation_horizontal):
+    navigation = rest_client.get_navigation(navigation_id)
+
+    navigations = ""
+
+    for sub_navigation in navigation['subNavigations']:
+
+        html_link = '<a href="' + sub_navigation['url'] + '">' + sub_navigation['title'] + '</a> '
+
+        if show_navigation_horizontal:
+            navigations += html_link
+        else:
+            st.html(html_link)
+
+    if show_navigation_horizontal:
+        st.html(navigations)

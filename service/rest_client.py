@@ -7,6 +7,10 @@ def get_navigations():
     return requests.get(BASE_URL + "/api/de/v1/cms/navigations").json()
 
 
+def get_navigation(navigation_id):
+    return requests.get(BASE_URL + "/api/de/v1/cms/navigations/" + str(navigation_id)).json()
+
+
 def get_pages(navigation_id):
     return requests.get(BASE_URL + "/api/de/v1/cms/navigations/" + str(navigation_id) + "/pages").json()
 
