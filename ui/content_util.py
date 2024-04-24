@@ -126,7 +126,7 @@ def show_contact(content):
                      {'label': 'Telefon', 'value': get_add_field(addfields, 6, None)['value']}]
 
     if title:
-        st.markdown("<h3>" + title + "</h3>", unsafe_allow_html=True)
+        st.html(f'<h3>{title}</h3>')
 
     contact = ""
 
@@ -146,10 +146,9 @@ def show_navigation(content):
 
     if navigation_id:
         if title:
-            st.html('<h3>' + title + "<h3>")
+            st.html(f'<h3>{title}</h3>')
 
-        navigation_util.show_navigation(navigation_id, alignment=='horizontal')
-
+        navigation_util.show_navigation(navigation_id, alignment == 'horizontal')
 
 
 def handle_content(content, template_id):
