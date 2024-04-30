@@ -3,6 +3,11 @@ import streamlit as st
 
 
 def get_navigation_prefix(depth):
+    """
+    Returns a prefix for the navigation. The prefix is used to show the navigation in a structured way
+    :param depth: the depth of the navigation
+    :return:
+    """
     prefix = ""
     for i in range(depth):
         prefix += "\t__"
@@ -11,6 +16,10 @@ def get_navigation_prefix(depth):
 
 
 def get_navigation_select():
+    """
+    Get navigations from the headless cms and show them in a select box
+    :return: returns the selected navigation
+    """
     response = rest_client.get_navigations()
 
     navigation_dict = get_navigations(response, {})
@@ -21,6 +30,14 @@ def get_navigation_select():
 
 
 def get_navigations(navigations, navigation_dict, depth=0):
+    """
+    Get all navigations and their subNavigations hierarchically
+    :param navigations: list of navigations as json
+    :param navigation_dict:
+    :param depth: used to show the correct amount of prefixes
+    :return: returns the complete navigation
+    """
+
     if len(navigations) == 0:
         return navigation_dict
 
@@ -33,6 +50,11 @@ def get_navigations(navigations, navigation_dict, depth=0):
 
 
 def show_navigation(navigation_id, show_navigation_horizontal):
+    """
+    shows the subNavigations of a navigation. Not hierarchically!
+    :param navigation_id:
+    :param show_navigation_horizontal: if true the navigation is shown horizontally otherwise vertically
+    """
     navigation = rest_client.get_navigation(navigation_id)
 
     navigations = ""

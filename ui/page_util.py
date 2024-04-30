@@ -3,6 +3,11 @@ import streamlit as st
 
 
 def get_page_select(navigation_id):
+    """
+    Get pages of a navigation and show them in a select box
+    :param navigation_id:
+    :return: returns the selected page
+    """
     response = rest_client.get_pages(navigation_id)
 
     page_dict = {}
