@@ -1,7 +1,7 @@
 import requests
 
 """ Base url of the headless cms """
-BASE_URL = "http://localhost:8080"
+BASE_URL = "https://cms-business.mysign.ch"
 
 
 def get_navigations():

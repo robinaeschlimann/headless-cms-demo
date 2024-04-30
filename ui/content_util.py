@@ -18,7 +18,7 @@ TEMPLATE_ID_NAVIGATION = 24152
 """
 Base url of the headless cms
 """
-BASE_URL = "http://localhost:8080"
+BASE_URL = "https://cms-business.mysign.ch"
 
 
 def show_title(title):
