@@ -1,8 +1,6 @@
 from ui import content_util, layout_region_util
 
-"""
-Shows the sidebar with the navigation and page select. After a page is selected the content of the page is shown.
-"""
+# Shows the sidebar with the navigation and page select. After a page is selected the content of the page is shown.
 if __name__ == '__main__':
 
     sidebar_dict = content_util.show_sidebar()
