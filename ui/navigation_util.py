@@ -9,7 +9,7 @@ def get_navigation_prefix(depth):
     :return:
     """
     prefix = ""
-    for i in range(depth):
+    for _ in range(depth):
         prefix += "\t__"
 
     return prefix
